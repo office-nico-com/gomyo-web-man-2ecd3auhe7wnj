@@ -16,6 +16,8 @@ pip install sphinx
 pip install sphinx-book-theme
 
 
+
+:: 初回のみ
 (.venv) D:\00_NICO\24_五明株式会社\マニュアル>sphinx-quickstart
 Welcome to the Sphinx 9.1.0 quickstart utility.
 
@@ -53,3 +55,7 @@ You should now populate your master file D:\00_NICO\24_五明株式会社\マニュアル\s
 source files. Use the Makefile to build the docs, like so:
    make builder
 where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+
+
+:: ビルド
+make publish

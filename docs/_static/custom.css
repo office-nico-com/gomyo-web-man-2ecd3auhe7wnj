@@ -1,0 +1,247 @@
+:root {
+/*  --theme-color: #1d50a2; */
+  --theme-color: #16304B;
+  --text-side-color: #fff;
+  --text-side-active-color: #ffbf00;
+  --table-border-color: #AAA;
+  --table-hover-color: #DDE2EA;
+  --table-toggle-color: #F3F4F5;
+}
+
+
+.bd-container {
+    justify-content: start;
+}
+
+p.title.logo__title{
+    padding-bottom:0px;
+    color: var(--text-side-color) !important;
+}
+
+.bd-sidebar-primary {
+    background-color: var(--theme-color);
+    width: 30%
+}
+
+img {
+    border: 1px solid #999;
+    margin-bottom:40px;
+}
+
+div.highlight-default{
+    margin-bottom:40px;
+}
+
+table.table {
+    margin-bottom:40px;
+}
+
+
+nav.bd-links li>a {
+    color: var(--text-side-color);
+}
+
+
+.bd-main .bd-content .bd-article-container {
+    min-width:760px !important;
+}
+
+
+p.prev-next-subtitle{
+    display:none;
+}
+
+
+.prev-next-area a p.prev-next-title {
+    font-weight:normal;
+}
+
+p.sidebar-subtitle{
+    font-size:0.9em;
+    color:#fff;
+}
+
+p.sidebar-subtitle::before, p.sidebar-subtitle::after{
+     content: "－";
+}
+
+.navbar-brand  {
+    display:block;
+}
+
+
+.navbar-brand .logo__title {
+    text-align:left !important;
+    font-weight:bold;
+    color:#fff !important;
+}
+
+.footer-article-item{
+    margin-top:50px;
+}
+
+.navbar-nav li a:focus, .navbar-nav li a:hover, .navbar-nav li.current>a {
+    color: var(--text-side-active-color);
+    box-shadow: inset max(3px, .1875rem, .12em) 0 0 var(--text-side-active-color);
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+
+
+.navbar-nav li a:focus, .navbar-nav li a:hover:hover, .navbar-nav li.current>a:hover {
+    color: var(--text-side-active-color);
+    box-shadow: inset max(3px, .1875rem, .12em) 0 0 var(--theme-color);
+    font-weight:bold;
+}
+
+.navbar-nav li.current>a:hover {
+    box-shadow: inset max(3px, .1875rem, .12em) 0 0 var(--text-side-active-color) !important;
+}
+
+table.table ul, table.table ul li {
+    list-style-type: none;
+    padding-left:0px;
+}
+
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 26px;
+    border-bottom:solid 1px #999;
+    padding-bottom:5px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight:bold;
+}
+
+
+table.table td {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+@media print {
+    h1{
+        font-size:32px !important;
+        text-align:left !important;
+        padding-bottom:20px;
+        padding-left:15px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 16px;
+        font-weight:bold;
+    }
+    #print-main-content{
+        display:none;
+    }
+}
+
+ul.dropdown-menu {
+    display: none;
+    opacity:0;
+}
+
+div.toctree-wrapper.compound li:first-child {
+  display: none;
+}
+
+span.guid-label p{
+    margin-bottom:7px;
+}
+
+span.guid-label span{
+    font-size: 1.5em;
+}
+
+#pst-primary-sidebar div.sidebar-primary-items__end{
+    margin-top:100%;
+}
+
+div.bd-footer-content__inner.container div.footer-item:first-child {
+    display:none;
+}
+
+div.bd-container__inner.bd-page-width {
+    max-width:100%;
+}
+
+
+table.table {
+    border-top:solid 1px var(--table-border-color);
+    border-left:solid 1px var(--table-border-color);
+    margin-bottom:0px;
+}
+
+table.table th{
+    border-bottom:solid 2px var(--table-border-color);
+    border-right:solid 1px var(--table-border-color);
+}
+
+
+table.table tr.row-even td{
+    background-color: #fff;
+}
+
+table.table tr.row-odd td{
+    background-color: var(--table-toggle-color);
+}
+
+
+
+table.table td{
+    border-bottom:solid 1px var(--table-border-color);
+    border-right:solid 1px var(--table-border-color);
+}
+
+table.table tr:hover td{
+    background-color: var(--table-hover-color);
+}
+
+div.print-br{
+    page-break-after: always;
+    display: block;
+    line-height: 0;
+    margin: 0;
+    padding: 0;  
+}
+
+span.guid-label span {
+    font-size:18px;
+    font-weight: bold;
+}
+
+div.toctree-wrapper.compound {
+    margin-left:15px;
+}
+
+
+h3 {
+    font-size: 1.3em;
+    margin-top:20px;
+}
+
+hr.docutils {
+    margin-top:30px;
+    border-top: 1px solid #999;
+}
+
+footer.prev-next-footer{
+    margin-top:50px;
+    padding-bottom:10px;
+}
+nav.bd-toc-nav ul.nav ul.nav{
+    display:block;
+}
+span.c1 {
+    color: #0066FF !important;
+}
