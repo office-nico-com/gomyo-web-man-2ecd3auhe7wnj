@@ -59,3 +59,6 @@ where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 
 :: ビルド
 make publish
+
+
+::GitHubのPagesで表示するには、.nojekyllをルートフォルダに配置する
