@@ -61,4 +61,21 @@ where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 make publish
 
 
-::GitHubのPagesで表示するには、.nojekyllをルートフォルダ（docs）に配置する
+::GitHubのPagesで表示する（クローラー無視、_から始まるフォルダを有効化）
+:: source直下に、.nojekyllとrobots.txtを配置（内容はコピーして）
+:: layoutファイルに
+
+{% block extrahead %}
+  {{ super() }}
+  <meta name="robots" content="noindex,nofollow">
+{% endblock %}
+
+
+を記述
+
+:: conf.pyに
+
+html_extra_path = ["robots.txt",".nojekyll"]
+
+を記述
+
