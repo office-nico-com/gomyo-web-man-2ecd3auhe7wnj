@@ -1,0 +1,74 @@
+{% extends "!layout.html" %}
+
+{% block footer %}
+{{ super() }}
+
+
+<script type="text/javascript">
+    const titleElement = document.querySelector('p.title.logo__title');
+    titleElement.style.paddingBottom = '0px';
+    const newElement = document.createElement('p');
+    newElement.className = 'sidebar-subtitle';
+    newElement.textContent = '{{ project_sub }}'; 
+    titleElement.insertAdjacentElement('afterend', newElement);
+
+    const button = document.querySelector('button.btn.dropdown-toggle');
+    button.addEventListener('click', function() {
+        window.print();
+    });
+
+
+    const buttonToggle = document.querySelector('button.sidebar-toggle');
+    const sidebar = document.querySelector('#pst-primary-sidebar');
+
+    // 属性を削除
+    //buttonToggle.removeAttribute('data-bs-original-title');
+    //buttonToggle.removeAttribute('aria-label');
+    //buttonToggle.removeAttribute('data-bs-toggle');
+    //buttonToggle.removeAttribute('data-bs-placement');
+    //buttonToggle.setAttribute('title', 'サイドバーを閉じる');
+
+    // 初期状態の確認と反映
+    if (sessionStorage.getItem('sidebarVisible') === 'false') {
+        sidebar.style.display = 'none';
+        buttonToggle.setAttribute('aria-label', 'サイドバーを開く');
+
+        setTimeout(function(){
+           buttonToggle.dataset.bsOriginalTitle = 'サイドバーを開く';
+        }, 50);
+
+        
+    }
+    else {
+        sidebar.style.display = 'block';
+        buttonToggle.setAttribute('aria-label', 'サイドバーを閉じる');
+        setTimeout(function(){
+           buttonToggle.dataset.bsOriginalTitle = 'サイドバーを閉じる';
+        }, 50);
+    }
+
+    buttonToggle.addEventListener('click', function(event){
+        // 現在の状態をチェックしてトグル
+        if (sidebar.style.display === 'none') {
+            sidebar.style.display = 'block';
+            sessionStorage.setItem('sidebarVisible', 'true'); // 表示状態を保存
+            buttonToggle.setAttribute('aria-label', 'サイドバーを閉じる');
+            buttonToggle.dataset.bsOriginalTitle = 'サイドバーを閉じる';
+        } 
+        else {
+            sidebar.style.display = 'none';
+            sessionStorage.setItem('sidebarVisible', 'false'); // 非表示状態を保存
+            buttonToggle.setAttribute('aria-label', 'サイドバーを開く');
+            buttonToggle.dataset.bsOriginalTitle = 'サイドバーを開く';
+        }
+
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    });
+
+
+
+
+</script>
+
+{% endblock %}

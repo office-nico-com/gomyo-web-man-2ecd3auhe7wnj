@@ -1,0 +1,55 @@
+:: “py launcher” でPythonを指定してvenv作成（ここ重要）
+py -3.13 -m venv .venv
+
+:: 有効化（cmd）
+call .\.venv\Scripts\activate.bat
+
+:: ちゃんとvenvのpythonを使ってるか確認
+where python
+python -c "import sys; print(sys.executable)"
+
+:: pip更新
+python -m pip install -U pip
+
+pip install sphinx
+
+pip install sphinx-book-theme
+
+
+(.venv) D:\00_NICO\24_五明株式会社\マニュアル>sphinx-quickstart
+Welcome to the Sphinx 9.1.0 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory "_build" within the root path, or you separate
+"source" and "build" directories within the root path.
+> Separate source and build directories (y/n) [n]: y
+
+The project name will occur in several places in the built documentation.
+> Project name: Project
+> Author name(s): Fujisawa
+> Project release []: 1.0.0
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+> Project language [en]: ja
+
+Creating file D:\00_NICO\24_五明株式会社\マニュアル\source\conf.py.
+Creating file D:\00_NICO\24_五明株式会社\マニュアル\source\index.rst.
+Creating file D:\00_NICO\24_五明株式会社\マニュアル\Makefile.
+Creating file D:\00_NICO\24_五明株式会社\マニュアル\make.bat.
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file D:\00_NICO\24_五明株式会社\マニュアル\source\index.rst and create other documentation
+source files. Use the Makefile to build the docs, like so:
+   make builder
+where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
